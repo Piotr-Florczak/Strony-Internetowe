@@ -1,0 +1,18 @@
+Dzisiaj:
+Podpinasz swoja baze "zdrowie" i przerabiasz plik, aby wyswietlal wszystkie dane z Twojej bazy w tabeli
+
+W domu dodatkowo:
+Przygotuj sensowne zapytania, zaliczone będą tylko te, które powiesz po ludzku co robią:
+
+1. Wykorzystaj w jednym zapytaniu WHERE i funkcję na kolumnie  np SUM
+2. Wykorzystaj w jednym zapytaniu nazwanie AS oraz WHERE
+3. Wykorzystaj dwa razy AND w jednym zapytaniu oraz sortowanie
+4. Wykorzystaj WHERE i GROUP BY w jednym zapytaniu
+5. Wykorzystaj w jednym zapytaniu 5 funkcji statystycznych oraz wykonaj jakieś dowolne obliczenia
+
+i na MAILa np w tresci tego maila: zapytanie (moze być w komentarzu w kodzie)->Wyjasnienie->Wynik zapytania
+mogą być to zrzuty, może być PDF, lub DOCX, lub JPG
+
+i pliki PHP, a w nich skrypty z tymi zapytaniami
+
+

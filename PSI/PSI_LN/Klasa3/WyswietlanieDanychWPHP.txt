@@ -1,0 +1,25 @@
+daneZdrowotne
+	- id
+	- data
+	- waga
+	- tetno
+---------------------------------------------------------------
+<table id="example">
+<thead>
+	<tr>	<th>Data</th><th>Waga</th><th>Tętno</th>	</tr>
+</thead>
+<tbody>
+<?php
+	$con=mysqli_connect("localhost", "root", "", "ZDROWIE");
+	$res=mysqli_query($con, "SELECT * FROM daneZdrowotne ORDER BY id DESC");
+	while($row=mysqli_fetch_assoc($res)){
+		$data=$row["data"];
+		$tetno=$row["tetno"];
+		$waga=$row["waga"];
+		echo "<tr>
+				<td>$data</td><td><td>$waga</td><td>$tetno</td>
+			  </tr>";
+	}
+?>
+ </tbody>
+ </table>

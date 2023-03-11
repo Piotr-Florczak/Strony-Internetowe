@@ -1,0 +1,88 @@
+<html>
+<head>
+<script type="text/javascript" src="jquery.min.js"></script>
+<!--uwaga, musisz sobie sciagnac z Internetu ten plik -->
+</head>
+<style>body{background-color: red;}
+		#page{background-color: white; margin:0 auto; padding:10px; text-align: center; width: 80%; min-height: 200px;}</style>
+<body>
+<div id="page">
+<input type="datetime-local">
+		<!--
+		<input type="text" id="liczba">
+		-->
+		<button class="przycisk">1</button>
+		<button class="przycisk">2</button>
+		<button class="przycisk">3</button>
+		<div id="box"></div>
+</div>
+
+<script>
+/*
+JS:
+document.getElementsByTagName("div")
+document.getElementsByClassName("przycisk")
+document.getElementById("box");
+
+
+
+
+jQuery:
+	$("div")
+	$(".przycisk")
+	$("#box")
+
+pobieranie wartosci z formularza
+
+JS:
+let zmienna=document.getElementById("liczba").value;
+
+jQuery:
+let zmienna=$("#liczba").val();
+
+pisanie wewnatrz DIVa:
+JS:
+document.getElementById("box").innerHTML="Jakis nowy tekst";
+jQuery
+$("#box").html("Jakis nowy tekst");
+
+Zmiana stylu:
+document.getElementById("box").style.backgroundColor="red";
+jquery:
+$("#box").css('background-color', 'red');
+
+....warto tez zobaczyc funkcje animate
+
+
+Zadanie na start:
+- przerob ten skrypt, aby nie reagowal na clicka tylko na najechanie myszki
+- przypomnij sobie/wyszukaj poszczegolne zwrotki hymnu Polski
+- po najechaniu myszką na wybrany numer pokazuje sie Tobie dana zwrotka
+- dla chetnych: a moze zmienisz tlo na obrazek nawiazujacy do danej zwrotki?
+
+*/
+
+//this to element, na ktorym wywolano zdarzenie, tutaj klikniecia
+$(".przycisk").click(function() {
+	var value = $('#liczba').val();
+	var value2 = $('#liczba2').val();
+   
+	//var value=($(this).text());//a zatem pobiera tekst z elementu kliknietego
+	
+
+	$.ajax({ 						
+        url: "http://localhost/test.php?value="+value+"&innaLiczba="+value2,
+		method : "post",
+        dataType : "text",
+		
+        success : function(odpowiedz) {
+			
+			$("#box").html("<b>Odpowiedz serwera to: </b>"+odpowiedz);
+        //odpowiednik document.getElementById("odpowiedz").innerHTML=odpowiedz;
+        }
+    });
+});
+
+</script>
+</body>
+</html>

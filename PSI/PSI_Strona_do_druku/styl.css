@@ -1,0 +1,215 @@
+html, body { height: 100%; }
+@media print 
+{
+
+	html,
+	body 
+	{
+		height: 100%;
+	}
+
+	.top 
+	{
+		text-align: center;
+		width: 100%;
+		height: 10%;
+		margin: auto;
+		width: 50%;
+
+		text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+		font-size: 300%;
+		font-family: sans-serif;
+
+	}
+
+	.reklama 
+	{
+		display: none;
+	}
+
+	.form 
+	{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		background: white;
+		border-radius: 10px;
+		width: 30%;
+
+	}
+
+	input[type=text] 
+	{
+		width: 100%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		display: inline-block;
+		border: none;
+		background: #ffffff;
+		outline: none;
+	}
+
+	select 
+	{
+		width: 50%;
+		padding: 15px;
+		margin: 5px 0 22px 0;
+		display: inline-block;
+		background: #ffffff;
+	}
+
+	select#xyz 
+	{
+		border: 0px;
+		outline: 0px;
+	}
+
+	.kreska 
+	{
+		display: none;
+	}
+
+	.rozmiar 
+	{
+		display: none !important;
+	}
+
+	.drukuj 
+	{
+		display: none;
+	}
+
+	.drukuj:hover 
+	{
+		display: none;
+	}
+
+	.rozmiar_pola 
+	{
+		display: block !important;
+		position: absolute;
+		top: 72%;
+		left: 65%;
+	}
+	.rozmiar_pola2
+	{
+		display: block !important;
+		float: right;
+	}
+
+}
+
+
+.top
+{
+	text-align: center;
+	width: 100%;
+	height: 10%;
+	margin: auto;
+  	width: 50%;
+
+  	text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
+  	font-size: 300%;
+  	font-family: sans-serif;
+
+}
+
+.reklama
+{
+	width: 15%;
+	height: 70%;
+	background-color: rgb(251, 207, 40);
+	text-align: center;
+	float: left;
+}
+
+.form
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    border-radius: 10px;
+    width: 30%;
+    
+}
+input[type=text]
+{
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #ffffff;
+  outline: none;
+}
+select
+{
+  width: 50%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  background: #ffffff;
+}
+
+select#xyz 
+{
+	border:0px;
+	outline:0px;
+}
+
+.kreska
+{
+  position: absolute;
+  border-top: solid black 1px;
+  transform: translate(2.5%, -140%);
+  width: 96%;
+  height: 5%;
+}
+
+.rozmiar
+{
+	position: absolute;
+    top: 72%;
+    left: 65%;
+}
+
+.drukuj
+{
+    text-align: center;
+    position: absolute;
+    top: 79%;
+    left: 45%;
+    height: 5%;
+    width: 10%;
+
+
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color:#7892c2;
+	border-radius:10px;
+	border:1px solid #4e6096;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:19px;
+	padding:12px 37px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #283966;
+}
+.drukuj:hover
+{
+    background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color:#476e9e;
+}
+.rozmiar_pola
+{
+	display: none;
+}
+.rozmiar_pola2
+{
+		display: none;
+}

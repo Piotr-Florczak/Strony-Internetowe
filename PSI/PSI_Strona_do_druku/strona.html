@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" href="styl.css" />
+    <script type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="skrypt.js"></script>
+    <title>Stronka</title>
+  </head>
+  <body>
+    <div class="top">Działki na sprzedarz</div>
+
+    <div class="reklama">reklama</div>
+
+    <div class="form">
+      <form name="Form">
+        <input name="imie" type="text" placeholder="imie" id="input_name"  />
+        <div class="kreska"></div>
+
+        <input name="nazwisko" type="text" placeholder="nazwisko" />
+        <div class="kreska"></div>
+
+        <input name="e-mail" type="text" placeholder="e-mail" />
+        <div class="kreska"></div>
+
+        <input
+          name="ZIP"
+          type="text"
+          required
+          class="postalcode"
+          placeholder="Kod pocztowy:"
+          pattern="[0-9]{2}[-][0-9]{3}"
+          maxlength="6"
+        />
+        <div class="kreska"></div>
+
+        <select>
+          <!-- jak dodać place holder?-->
+          <option value="0">zachodnio-pomorskie:</option>
+          <option value="1">pomorskie</option>
+          <option value="2">warmińsko-mazurskie</option>
+          <option value="3">podlaskie</option>
+          <option value="4">lubuskie</option>
+          <option value="5">wielkopolskie</option>
+          <option value="6">kujawsko-pomorskie</option>
+          <option value="7">mazowieckie</option>
+          <option value="8">dolnośląskie</option>
+          <option value="9">opolskie</option>
+          <option value="10">śląskie</option>
+          <option value="11">małopolskie</option>
+          <option value="12">podkarpackie</option>
+          <option value="13">świętokrzyskie</option>
+          <option value="14">lubelskie</option>
+          <option value="14">łódzkie</option>
+        </select>
+      </form>
+
+      <fieldset>
+        <legend>Zaznacz rodzaj działki:</legend>
+
+        <div>
+          <input type="radio" name="1" checked />
+          <label>budowlana</label>
+        </div>
+
+        <div>
+          <input type="radio" name="1" />
+          <label>rolna</label>
+        </div>
+
+        <div>
+          <input type="radio" name="1" />
+          <label>inna</label>
+        </div>
+      </fieldset>
+
+      <fieldset>
+        <legend>Czy działka ma fundament regularny:</legend>
+
+        <div>
+          <input onclick="kiedy_zaznaczono_tak(1)" type="radio" name="2" />
+          <label>tak</label>
+        </div>
+
+        <div>
+          <input onclick="kiedy_zaznaczono_tak(0)" type="radio" name="2" />
+          <label>nie</label>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="rozmiar" id="display">
+      <fieldset>
+        <legend>wprowadz rozmiary dzialki w metrach</legend>
+        <input type="number" placeholder="długość" id="input_a" value="1" />
+        <input type="number" placeholder="szerokość" id="input_b" />
+      </fieldset>
+    </div>
+
+    <button class="drukuj" onClick="drukuj()">Drukuj</button>
+    <div class="rozmiar_pola">
+      rozmiar działki:
+      <div class="rozmiar_pola2" id="rozmiar_pola"></div>
+    </div>
+  </body>
+</html>

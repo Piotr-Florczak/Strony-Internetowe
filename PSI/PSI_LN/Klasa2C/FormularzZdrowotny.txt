@@ -1,0 +1,39 @@
+System kontroli zdrowia uzytkownika:
+
+Wprowadzane dane:
+	- data 
+	- waga
+	- temperatura ciała
+	- liczba wypitych szklanek wody
+	- ciśnienie tętnicze 120/80 (dwie wartości)
+	- liczba kroków 
+	- poziom stresu
+	- puls
+	- nasycenie krwi tlenem
+	
+	- inne parametry??? + 3paramwtry
+	
+	
+	
+1. Formularz wprowadzania danych, data niech ładuje się automatycznie (2023-10-10 07:04:32) ale z możliwością ręcznej zmiany
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+
+
+XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx
+
+Dla takiego formularza przygotuj i posiadane bazy danych (z jedną tabelą), przygotuj teraz 
+skrypt AJAX, który pozwoli umieścić dane z formualarza w bazie danych.
+
+Potrzebne pliki to te z zajęć: ajax.html oraz test.php
+
+_______UWAGA______________________
+
+NIe jest celem użycie SUBMIT, a zwykłego <input type="button"> z ustawionym onClickiem.
+Ta strona nie ma się przeładowywać.
+
+
+
+
+
+

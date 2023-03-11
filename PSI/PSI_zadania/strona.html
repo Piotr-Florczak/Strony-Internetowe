@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Zadania</title>
+  </head>
+  <body>
+    <div class="z1">
+      <div>
+        Wiek : <input type="text" name="input_z1" id="input_z1" value="5" />
+
+        <input
+          type="button"
+          name="button_z1"
+          id="button_z1"
+          value="Sprawdź liczbę"
+          onclick="sprawdz_z1()"
+        />
+      </div>
+    </div>
+
+    <div class="z2">
+      <div>
+        Dzień : <input type="text" name="input_z2" id="input_z2" value="5" />
+
+        <input
+          type="button"
+          name="button_z2"
+          id="button_z2"
+          value="Sprawdź dzień"
+          onclick="sprawdz_z2()"
+        />
+      </div>
+    </div>
+    <div class="z3">
+      Checkbox:
+      <input type="checkbox" id="myCheck" onclick="sprawdz_cb_zad3()" />
+    </div>
+
+    <label for="a">a</label>
+    <input id="a" type="number" value="0" />
+    <label for="b">b</label>
+    <input id="b" type="number" value="0" />
+    <label for="c">c</label>
+    <input id="c" type="number" value="0" />
+    <button onclick="oblicz()">Oblicz pierwiastki</button>
+    <br />
+    <textarea id="text_area"></textarea>
+
+    <script>
+      function sprawdz_z1() {
+        let a = document.getElementById("input_z1").value;
+        if (a > 10) alert("warunkek spełniony");
+        else alert("Błąd!");
+      }
+      function sprawdz_z2() {
+        let a = document.getElementById("input_z2").value;
+        console.log(a);
+        switch (a) {
+          case "1":
+            alert("poniedzałek");
+            break;
+          case "2":
+            alert("wtorek");
+            break;
+          case "3":
+            alert("środa");
+            break;
+          case "4":
+            alert("czwartek");
+            break;
+          case "5":
+            alert("piątek");
+            break;
+          case "6":
+            alert("sobota");
+            break;
+          case "7":
+            alert("niedziela");
+            break;
+          default:
+            alert("błędny numer dnia tygodnia");
+        }
+      }
+      function sprawdz_cb_zad3() {
+        if (document.getElementById("myCheck").checked)
+          alert("Pole zazbaczibe");
+        else alert("Pole odznaczone");
+      }
+
+      function oblicz() {
+        let a = parseInt(document.getElementById("a").value);
+        let b = parseInt(document.getElementById("b").value);
+        let c = parseInt(document.getElementById("c").value);
+
+        let delta = b * b - 4 * a * c;
+
+        let suma = a + b + c;
+        if (delta > 0) {
+          let x1 = ((-b - Math.sqrt(delta)) / 2) * a;
+          let x2 = ((-b + Math.sqrt(delta)) / 2) * a;
+
+          document.getElementById("text_area").innerHTML =
+            "delta: " + delta + "\n" + "x1: " + x1 + "\n" + "x2: " + x2;
+        }
+        if (delta == 0) {
+          let x1 = (-b / 2) * a;
+          document.getElementById("text_area").innerHTML =
+            "delta: " + delta + "\n" + "x1: " + x1;
+        }
+        if (delta < 0) {
+          document.getElementById("text_area").innerHTML =
+            "delta: " + delta + " (brak miejsc zerowych)";
+        }
+
+        document.getElementById("text_area").innerHTML +=
+          "\n" + "_______________________________";
+        document.getElementById("text_area").innerHTML +=
+          "\n" + "suma: " + suma + "\n";
+        if (a < 0) {
+          document.getElementById("text_area").innerHTML +=
+            "liczba a jest ujemna" + "\n";
+        }
+
+        if (b < 0) {
+          document.getElementById("text_area").innerHTML +=
+            "liczba b jest ujemna" + "\n";
+        }
+
+        if (c < 0) {
+          document.getElementById("text_area").innerHTML +=
+            "liczba c jest ujemna" + "\n";
+        }
+        let suma_ab = a + b;
+        if (suma_ab > c) {
+          document.getElementById("text_area").innerHTML += "a+b>c" + "\n";
+        } else {
+          document.getElementById("text_area").innerHTML += "a+b <= c" + "\n";
+        }
+        if (a == b && b == c) {
+          document.getElementById("text_area").innerHTML +=
+            "liczby z pola a, b i c są takie same" + "\n";
+        }
+      }
+    </script>
+  </body>
+</html>

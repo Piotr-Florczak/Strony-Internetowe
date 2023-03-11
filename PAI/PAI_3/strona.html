@@ -1,0 +1,27 @@
+<canvas id="emote-canvas" width="100" height="100"></canvas>
+
+<script>
+  // get a reference to the canvas element
+  var canvas = document.getElementById('emote-canvas');
+
+  // get a reference to the drawing context
+  var context = canvas.getContext('2d');
+
+  // set the fill color for the emote
+  context.fillStyle = "#FF0000";
+
+  // draw the emote using basic shapes and colors
+  context.beginPath();
+  context.arc(50, 50, 40, 0, 2 * Math.PI); // draw a circle for the face
+  context.fill();
+  context.beginPath();
+  context.arc(40, 40, 5, 0, 2 * Math.PI); // draw two small circles for the eyes
+  context.arc(60, 40, 5, 0, 2 * Math.PI);
+  context.fill();
+  context.beginPath();
+  context.moveTo(30, 60);
+  context.quadraticCurveTo(50, 70, 70, 60); // draw a curved line for the mouth
+  context.stroke();
+</script>
+
+

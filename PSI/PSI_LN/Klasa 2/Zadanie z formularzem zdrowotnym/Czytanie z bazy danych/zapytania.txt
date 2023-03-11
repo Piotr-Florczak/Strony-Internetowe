@@ -1,0 +1,99 @@
+Czytanie wszystkich danych
+select * from informacje;
+
+Czytaj same imiona
+select imie from informacje;
+
+Czytac imione i wiek
+select imie, wiek from informacje;
+
+Wyswietl to samo ale imiona duzymi literami
+select UPPER(imie), wiek from informacje;
+
+Wycinanie danych
+select SUBSTR(imie, 2, 2), wiek from informacje
+
+Policz sredni wiek:
+select avg(wiek) from informacje;
+
+nazwij wynik jako srednia
+select avg(wiek) AS srednia from informacje;
+
+Wykonaj kilka operacji jednoczesnie:
+select max(wiek), min(wiek), avg(wiek), SUM(wiek) from informacje;
+select sum(wiek)/count(wiek) from informacje;
+
+Wyswietl imiona osob starszych niz 30 lat
+select imie, wiek from informacje where wiek>30;
+
+Wyswietl imiona osób, które w nazwie mają gdzie ciąg liter: uk
+select imie from informacje where imie like '%uk%'
+% oznacza dowolny ciag znakow przed lub po
+
+Wyswietl imiona osob w wieku >=24 mieszkajacych w Szczecinie
+select imie, wiek, miasto from informacje where wiek>=24 AND miasto="Szczecin";
+
+Posortuj wszystkich starszych niz 20 lat i sortuj alfabetycznie po miescie
+select imie, wiek, miasto from informacje where wiek>20 ORDER BY miasto;
+
+odwroc sortowanie ale np od najstarszego
+select imie, wiek, miasto from informacje where wiek>20 ORDER BY wiek DESC;
+
+A tylko najstarszy
+select imie, wiek, miasto from informacje ORDER BY wiek DESC LIMIT 1;
+
+Policz sredni wiek oraz ile osob jest w poszczegolnych miastach
+select miasto, avg(wiek), count(wiek) from informacje GROUP BY miasto;
+
+
+00000000000000000000000000000000000000000000000000
+
+Tabela: informacje(imie, wiek, miasto)
+
+Wszystkie info z  bazy
+select * from informacje
+select jakieKolumny from jakaTabela;
+
+select id, imie, wiek, miasto from informacje
+
+same imiona
+select imie from informacje;
+
+z wielkich liter
+select upper(imie) from informacje
+
+wycinanie kilku liter
+select substr(imie, 2, 1) from informacje
+select substr(imie, 2, 3) from informacje
+
+Podaj najwyzszy wiek:
+select max(wiek) from informacje
+select min(wiek), max(wiek), count(wiek) as iluLudzi, avg(wiek) as sredniaWieku, sum(wiek) as sumaWszystkichLat from informacje
+
+
+Wolno robic operacje matematyczne
+select sum(wiek)/count(imie) from informacje
+
+Ograniczenia
+Podaj imiona osób z wiekiem powyzej 20 lat
+select imie, wiek from informacje where wiek>20
+
+a tych ze Szczecina
+
+select imie, wiek from informacje where wiek>20 AND miasto='Szczecin'
+
+a posortuj tych z miasta szczecin po wieku
+select imie, wiek, miasto from informacje where miasto='Szczecin' ORDER BY wiek
+od najstarszych
+select imie, wiek, miasto from informacje where miasto='Szczecin' ORDER BY wiek DESC;
+
+Wyswietl sredni wiek oraz liczbe osób wzgledem kazdego z miast:
+select miasto, avg(wiek), count(imie) from informacje GROUP BY miasto;
+
+
+select imie, wzrost, cisnienieSkorczowe, cisnienieRozkorczowe from tabelka
+WHERE 
+	(cisnienieSkorczowe>130 AND cisnienieSkorczowe<160) OR (cisnienieSkorczowe<80) AND wzrost>150
+
+
+

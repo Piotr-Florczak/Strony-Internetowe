@@ -1,0 +1,17 @@
+Wprowadzanie danych (formularz):
+- data (niech uzupełnia się automatycznie z możliością zmiany
+- waga
+- puls
+- ciśnienie tętnicze
+- wzrost
+- nasycenie krwi tlenem
+- temperatura ciała
+- poziom stresu (w skali 5 stopniowej)
+- liczba wypitych szklanek wody
+- inne parametry??
+- liczba kroków (niech użytkownik może wybierać z innych aktywności np bieganie) 
+
+
+
+Formularz na 8 dowolnych parametrow + datę
+

@@ -1,0 +1,20 @@
+body {
+    margin:0;
+    padding:0;
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    background:rgb(20,20,30);
+}
+
+#mojePlotno {
+    margin:0;
+    padding:0;
+}
+
+#debug {
+    position:absolute;
+    left:0;
+    top:0;
+    background:rgba(255,255,255,0.4);
+}
