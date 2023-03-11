@@ -47,7 +47,7 @@
 
             success: function (response) 
             {
-                alert('Data submitted successfully!');
+                alert('wszystko ok');
             },
             error: function (jqXHR, textStatus, errorThrown) 
             {
@@ -61,7 +61,6 @@
 
 <?php
 $name = $_POST['name'];
-echo $name;
 ?>
 
 <style>
