@@ -12,7 +12,7 @@
         <form action>
             Data: <input type="date" id="data"> <br>
             Godzina:<input type="time"> <br>
-            Waga (KG):<input type="number"> <br>
+            Waga (KG):<input type="number" id="waga"> <br>
             Puls:<input type="number"> <br>
             Nazycenie Krwi tlenem:<input type="text"> <br>
             Temperatura ciała:<input type="number"> <br>
@@ -37,17 +37,18 @@
 
 </html>
 <script>
-    $(".submit-btn").click(function () {
-        var value = "test1";
-
+    $("#submit-btn").click(function () {
+        var value = $("#waga").val();
+        
         $.ajax({
             type: 'POST',
-            url: 'index.php',
+            url: 'test.php',
             data: {name: value},
 
             success: function (response) 
             {
-                alert('wszystko ok');
+                console.log(response);
+              //  alert('wszystko ok');
             },
             error: function (jqXHR, textStatus, errorThrown) 
             {
@@ -58,10 +59,6 @@
     });
 
 </script>
-
-<?php
-$name = $_POST['name'];
-?>
 
 <style>
     input[type=text],
@@ -109,7 +106,7 @@ $name = $_POST['name'];
     }
 
     input[type=submit] {
-        s width: 100%;
+        width: 100%;
         background-color: #4CAF50;
         color: white;
         padding: 14px 20px;
