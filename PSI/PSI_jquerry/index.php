@@ -22,7 +22,7 @@
 
             inne aktywności:
 
-            <select name="bieganie">
+            <select name="bieganie" id="inne">
                 <option value="skakanie">skakanie</option>
                 <option value="jazda na rowerze">jazda na rowerze</option>
                 <option value="bieganie">bieganie</option>
@@ -33,7 +33,7 @@
         </form>
     </div>
 
-    <div class="box">test</div>
+    <div class="box" id="box">test</div>
 
 
 </body>
@@ -50,13 +50,19 @@
         var stres = $("#stres").val();
         var woda = $("#woda").val();
         var kroki = $("#kroki").val();
+        var inne = $("#inne").val();
+
         
+        const dateObj = new Date(dataa.split('.').reverse().join('-'));
+        const nowaData = dateObj.toISOString().split('T')[0];
+
+
         $.ajax({
             type: 'POST',
             url: 'test.php',
             data: 
             {
-                dataa: dataa,
+                nowaData: nowaData,
                 godzina: godzina,
                 waga: waga,
                 puls: puls,
@@ -65,12 +71,15 @@
                 stres: stres,
                 woda: woda,
                 kroki: kroki,
+                inne: inne,
             },
 
             success: function (response) 
             {
                 console.log(response);
-              //  alert('wszystko ok');
+                $("#box").html("<b>Odpowiedz serwera to: </b>"+response);
+
+                //alert('wszystko ok');
             },
             error: function (jqXHR, textStatus, errorThrown) 
             {
@@ -83,6 +92,31 @@
 </script>
 
 <style>
+    .team
+{
+	position: absolute;
+	top: 320px; left: 7px;
+}
+
+table 
+{
+  border-collapse: collapse;
+  width: 65%;
+}
+
+th, td 
+{
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th 
+{
+  background-color: #04AA6D;
+  color: white;
+}
     input[type=text],
     select {
         width: 100%;
@@ -148,10 +182,5 @@
         padding: 20px;
         width: 30%;
         float: left;
-    }
-    .box 
-    {
-        border: 1px solid black;
-        
     }
 </style>
