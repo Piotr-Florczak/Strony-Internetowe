@@ -8,17 +8,17 @@
 </head>
 
 <body>
-    <div>
+    <div class="box1"> 
         <form action>
-            Data: <input type="date" id="data"> <br>
-            Godzina:<input type="time"> <br>
+            Data: <input type="date" id="data" id="data"> <br>
+            Godzina:<input type="time" id="godzina"> <br>
             Waga (KG):<input type="number" id="waga"> <br>
-            Puls:<input type="number"> <br>
-            Nazycenie Krwi tlenem:<input type="text"> <br>
-            Temperatura ciała:<input type="number"> <br>
-            Poziom stresu:<input type="number" min="1" max="5"> <br>
-            Liczba wypitych szklanek wody:<input type="number"> <br>
-            Liczba kroków:<input type="number"> <br>
+            Puls:<input type="number" id="puls"> <br>
+            Nazycenie Krwi tlenem:<input type="text" id="krew"> <br>
+            Temperatura ciała:<input type="number" id="temp"> <br>
+            Poziom stresu:<input type="number" min="1" max="5" id="stres"> <br>
+            Liczba wypitych szklanek wody:<input type="number" id="woda"> <br>
+            Liczba kroków:<input type="number" id="kroki"> <br>
 
             inne aktywności:
 
@@ -33,17 +33,39 @@
         </form>
     </div>
 
+    <div class="box">test</div>
+
+
 </body>
 
 </html>
 <script>
     $("#submit-btn").click(function () {
-        var value = $("#waga").val();
+        var dataa = $("#data").val();
+        var godzina = $("#godzina").val();
+        var waga = $("#waga").val();
+        var puls = $("#puls").val();
+        var krew = $("#krew").val();
+        var temp = $("#temp").val();
+        var stres = $("#stres").val();
+        var woda = $("#woda").val();
+        var kroki = $("#kroki").val();
         
         $.ajax({
             type: 'POST',
             url: 'test.php',
-            data: {name: value},
+            data: 
+            {
+                dataa: dataa,
+                godzina: godzina,
+                waga: waga,
+                puls: puls,
+                krew: krew,
+                temp: temp,
+                stres: stres,
+                woda: woda,
+                kroki: kroki,
+            },
 
             success: function (response) 
             {
@@ -120,10 +142,16 @@
         background-color: #45a049;
     }
 
-    div {
+    .box1 {
         border-radius: 5px;
         background-color: #f2f2f2;
         padding: 20px;
         width: 30%;
+        float: left;
+    }
+    .box 
+    {
+        border: 1px solid black;
+        
     }
 </style>
