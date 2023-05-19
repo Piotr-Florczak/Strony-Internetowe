@@ -3,7 +3,7 @@
     $uchwyt=fopen($sciezka, "r");
     //print_r($linijka);
     echo "<br><br>";
-    $licznik=0;
+    $r;
     while($linijka=fgets($uchwyt))
     {
         $tablica=explode("," , $linijka);
@@ -14,7 +14,6 @@
         }
     }
     echo " dla 2016 tyle: <h1>".$licznik."</h1>";
-
 
 
 
