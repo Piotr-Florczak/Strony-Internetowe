@@ -1,0 +1,69 @@
+header
+{
+    background-color: #993333;
+    color: white;
+    text-align: center;
+    height: 80px;
+}
+body
+{
+ background-color:rgb(112, 117, 117);	
+}
+
+.panel_informacyjny
+{
+    font-family:Tahoma;
+    color: white;
+    background-color: #CC6666;
+    text-align: center;
+    width: 25%;
+    height: 150px;
+    float: left;
+}
+
+.lewy_prawy
+{
+    background-color: #CC9999;
+    width: 40%;
+    height: 550px;
+    text-align: center;
+    float: left;
+}
+
+#a
+{
+    float: left;
+}
+
+.srodkowy
+{
+    background-color: #FFCCCC;
+    width: 20%;
+    height: 550px;
+    float: left;
+}
+
+.tabela
+{
+    border: 1px;
+    border-color: red;
+    border-style: dotted;
+    width: 100%;
+    text-align: center;
+}
+
+.przycisk
+{
+    border:none;
+    background-color: red;
+    color:white;
+    padding: 20px;
+
+}
+
+footer
+{
+    background-color: #993333;
+    color: white;
+    text-align: right;
+}

@@ -1,0 +1,57 @@
+header 
+{
+background: #4E885C;
+color: orange;
+text-align: center;
+height: 110px;
+}
+
+.left
+{
+width: 30%;
+height: 300px;
+background: #72A37D;
+float:left;
+}
+
+.mid
+{
+width: 40%;
+height:300px;
+background: url("pizza.png") no-repeat #A2C3A9;
+float:left;
+}
+
+.right
+{
+width: 30%;
+height:300px;
+background: #72A37D;
+text-align: center;
+float:left;
+}
+
+.down
+{
+height: 250px;
+background: #A2C3A9;
+text-align: center;
+clear: both;
+}
+
+footer
+{
+background: #4E885C;
+color:orange;
+}
+
+.btn
+{
+padding: 15px;
+background: orange;
+color: green;
+}
+ol li
+{
+    text-align: center;
+}
