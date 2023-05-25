@@ -3,16 +3,7 @@
     $uchwyt=fopen($sciezka, "r");
     //print_r($linijka);
     echo "<br><br>";
-    $licznik=0;
-    $mapa = array(
-    "2014" => "0",
-    "2015" => "0",
-    "2016" => "0",
-    "2017" => "0",
-    "2018" => "0",
-    "2019" => "0",);
-
-    $regiony =array();
+    $r;
     while($linijka=fgets($uchwyt))
     {
         $tablica=explode("," , $linijka);
