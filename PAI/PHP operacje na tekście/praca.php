@@ -1,9 +1,17 @@
 <?php
+    $licznik=0;
+    $mapa = array(
+    "2014" => "0",
+    "2015" => "0",
+    "2016" => "0",
+    "2017" => "0",
+    "2018" => "0",
+    "2019" => "0",);
+    $regiony =array();
     $sciezka="new-zealand-resident-arrivals-by-area-of-residence-csv.csv";
     $uchwyt=fopen($sciezka, "r");
     //print_r($linijka);
     echo "<br><br>";
-    $r;
     while($linijka=fgets($uchwyt))
     {
         $tablica=explode("," , $linijka);
@@ -63,7 +71,7 @@
     while($linijka=fgets($uchwyt))
     {
         $tablica=explode("," , $linijka);
-        if ($tablica[4]=="Territorial authority areas") 
+        if ($tablica[4]=="Territorial authority areas") //nie dziala dla sprawdzenia &&tablica[5]
         {
             $regiony[$tablica[2]] += $tablica[3]; 
         }
