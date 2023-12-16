@@ -1,0 +1,25 @@
+
+1. Zaimportować bazę bd8.sql (ta samo co bd7.sql)
+2. Stworzyć plik PHP, który połaczy się z bazą i wykona wszystkei zadnia po naciśnięciu zdefiniowanego przycisku.
+3. Zadania do wyknania po nacisnięciu przycisku:
+a) stworzenie kluczy głównych:
+	- w tabeli kontynenty: id_kontynent 
+	- w tabeli panstwa: id_panstwa
+	- w tabeli miasta: id_miasta 
+b) stworzenie kluczy obcych (index):
+	- w tabeli panstwa: id_kontynentu
+	- w tabeli miasta: id_panstwa
+c) stworzyć relację między tabelą kontynenty a tabelą panstwa
+
+d) stworzyć relację między tabelą miasta a tabelą panstwa
+
+Zabezpieczenia nie są wymagane do oceny 5 (bdb)
+Zabezpieczenia tworzenia kluczy i relacji są wymagane do oceny 6 (cel)
+
+
+$con=mysqli_connct("localhost","root","","bd8");
+$kw_ig_t_miasta="ALTER TABLE `kontynenty` ADD PRIMARY KEY(`id_kontynent`);";
+mysqli_query($con,$kw_ig_t_miasta);
+mysqli_close($con);
+bd8.txt
+Wyświetlanie bd8.txt.

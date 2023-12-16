@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz</title>
+</head>
+
+<body>
+    <script src="znaki.js"></script>
+    <form>
+        <label for="login">Login:</label><br >
+        <input type="text" id="login" name="login" required maxlength="22" placeholder="Wpisz login">
+        <div id="Divlogin"></div>
+        <br>
+
+        <label for="imie">Imię:</label><br>
+        <input type="text" id="imie" name="imie" required maxlength="33" placeholder="Wpisz imię">
+        <div id="Divimie"></div><br>
+
+        <label for="nazwisko">Nazwisko:</label><br>
+        <input type="text" id="nazwisko" name="nazwisko" required maxlength="55" placeholder="Wpisz nazwisko">
+        <div id="Divnazwisko"></div><br>
+
+        <label for="opis">Opis:</label><br>
+        <textarea id="opis" name="opis" maxlength="255" placeholder="Wpisz opis"></textarea>
+        <div id="Divopis"></div><br>
+
+        <input type="submit" value="Wyślij">
+    </form>
+</body>
+
+</html>

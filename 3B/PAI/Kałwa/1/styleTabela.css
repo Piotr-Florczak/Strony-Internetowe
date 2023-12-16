@@ -1,0 +1,27 @@
+html,body
+{
+ height:100%;
+ width:100%;
+ margin:0;
+ padding:0;
+ background:rgb(120,120,120);
+ }
+ body
+ {
+  display:flex;
+  gap:10%;
+  justify-content:center;
+  align-items:center; 
+}
+table
+{
+ border-collapse:collapse;
+ width:30%;
+}
+
+img
+{
+   max-width:100%;
+   max-height:100%;
+   border-radius:50%;
+}

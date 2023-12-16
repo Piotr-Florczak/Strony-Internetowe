@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+
+    </head>
+    <body>
+    <form action="" method="post">
+        <input type="submit" name="tworze" value="Tworzenie bazy danycyh">
+        <input type="submit" name="kasujbaza" value="Kasowanie bazy danycyh">
+    </form>
+    <?php
+        if(isset($_POST['tworze'])) //towrzy baze danych 
+        {
+            $kon=mysqli_connect('localhost','root','');
+            $tworz_baza='CREATE DATABASE IF NOT EXISTS 4B_06_11_2023';
+            $wybierz_baza='USE 4B_06_11_2023';
+            mysqli_query($kon,$tworz_baza);
+            mysqli_query($kon,$wybierz_baza);
+            mysqli_close($kon);
+        }
+        if(isset($_POST['kasujbaza'])) //kasuje baze danych 
+        {
+            $kon=mysqli_connect('localhost','root','');
+            $kasujbaza='DROP DATABASE IF EXISTS 4B_06_11_2023';
+            mysqli_query($kon,$kasujbaza);
+            mysqli_close($kon);
+        }
+    ?>
+     <form action="" method="post">
+        <input type="submit" name="tworzetab1" value="Tworzenie tabeli klasy">
+        <input type="submit" name="kasujtab1" value="Kasowanie tabeli klasy">
+    </form>
+    <?php    
+        if(isset($_POST['tworzetab1'])) //tworzy tabele 
+        {
+        $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+        $tworz_tab1='CREATE TABLE IF NOT EXISTS `4b_06_11_2023`.`klasy` (`id_klasy` INT(11) NOT NULL , `klasa` VARCHAR(20) NOT NULL ) ENGINE = InnoDB;';
+        mysqli_query($kon,$tworz_tab1);
+        mysqli_close($kon);
+        }
+        if(isset($_POST['kasujtab1'])) //kasuje tabele
+        { 
+            $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+            $kasujtab1='DROP TABLE klasy IF EXISTS';
+            mysqli_query($kon,$kasujtab1);
+            mysqli_close($kon);
+        }
+    ?>
+    <form action="" method="post">
+        <input type="submit" name="dodajKlasy" value="Dodawanie klas">
+        <input type="submit" name="usunKlasy" value="Usuwanie klas">
+    </form>
+    <?php    
+        if(isset($_POST['dodajKlasy'])) //tworzy tabele 
+        {
+        $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+        $dodajKlasy="INSERT INTO `klasy`(`id_klasy`, `klasa`) VALUES ('1','1A'),('2','1B'),('3','1C'),('4','2A'),('5','2B'),('6','2C'),('7','3A'),('8','3B'),('9','3C'),('10','4A'),('11','4B'),('12','4C'),('13','5A'),('14','5B'),('15','5C');";
+        mysqli_query($kon,$dodajKlasy);
+        mysqli_close($kon);
+        }
+        if(isset($_POST['usunKlasy'])) //kasuje tabele
+        { 
+            $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+            $kasujKlasy='TRUNCATE TABLE klasy;';
+            mysqli_query($kon,$kasujKlasy);
+            mysqli_close($kon);
+        }
+    ?>
+    <form action="" method="post">
+        <input type="submit" name="dodajUczniowie" value="Dodawanie tabeli uczniów">
+        <input type="submit" name="usunUczniowie" value="Usuwanie tabeli uczniów">
+    </form>
+    <?php    
+        if(isset($_POST['dodajUczniowie'])) //tworzy tabele 
+        {
+        $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+        $dodajUczn="CREATE TABLE IF NOT EXISTS `4b_06_11_2023`.`uczniowie` (`id_uczen` INT(11) NOT NULL , `nazwisko` VARCHAR(30) NOT NULL , `imie` TEXT NOT NULL , `id_klasa` INT(6) NOT NULL ) ENGINE = InnoDB;";
+        mysqli_query($kon,$dodajUczn);
+        mysqli_close($kon);
+        }
+        if(isset($_POST['usunUczniowie'])) //kasuje tabele
+        { 
+            $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+            $kasujUczn='DROP TABLE klasy IF EXISTS';
+            mysqli_query($kon,$kasujUczn);
+            mysqli_close($kon);
+        }
+    ?>
+    <form action="" method="post">
+        <input type="submit" name="dodajImiona" value="Dodawanie imion uczniów">
+        <input type="submit" name="usunImiona" value="Usuwanie imion uczniów">
+    </form>
+    <?php    
+        if(isset($_POST['dodajImiona']))
+        {
+        $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+        $dodajImiona="INSERT INTO `uczniowie`(`id_uczen`, `nazwisko`, `imie`, `id_klasa`) VALUES ('1','Kowalski','Szymon','1'),('2','Kałwa','Michał','2'),('3','Maciek','Portka','2'),('4','Olek','Milchert','4'),('5','Piotr','Suwaj','5');";
+        mysqli_query($kon,$dodajImiona);
+        mysqli_close($kon);
+        }
+        if(isset($_POST['usunImiona'])) 
+        { 
+            $kon=mysqli_connect('localhost','root','','4B_06_11_2023');
+            $kasujImiona='TRUNCATE TABLE uczniowie;';
+            mysqli_query($kon,$kasujImiona);
+            mysqli_close($kon);
+        }
+    ?>
+    </body>
+</html>
+

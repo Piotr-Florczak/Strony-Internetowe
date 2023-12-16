@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Układ Siatki vw/vh</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        position: relative;
+        width: 100vw;
+        height: 100vh;
+        margin: auto;
+        overflow: auto;
+      }
+
+      .box {
+        position: absolute;
+        background-color: #ddd;
+        border: 1px solid #000;
+      }
+
+      #box2 {
+        top: 1vh;
+        left: 32vw;
+        width: 30vw;
+        height: 20vh;
+      }
+
+      #box3 {
+        top: 1vh;
+        left: 63vw;
+        width: 36vw;
+        height: 20vh;
+      }
+
+      #box4 {
+        top: 22vh;
+        left: 32vw;
+        width: 20vw;
+        height: 20vh;
+      }
+
+      #box5 {
+        top: 22vh;
+        left: 53vw;
+        width: 46vw;
+        height: 45vh;
+      }
+
+      #box6 {
+        top: 43vh;
+        left: 32vw;
+        width: 20vw;
+        height: 56vh;
+      }
+
+      #box7 {
+        top: 1vh;
+        left: 1vw;
+        width: 30vw;
+        height: 50vh;
+      }
+
+      #box8 {
+        top: 68vh;
+        left: 53vw;
+        width: 46vw;
+        height: 31vh;
+      }
+
+      #box9 {
+        top: 52vh;
+        left: 1vw;
+        width: 30vw;
+        height: 47vh;
+      }
+
+      .box img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+
+      .box:hover {
+        transform: scale(1.05);
+      }
+
+      #overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 1;
+        display: none;
+      }
+
+      .closeButton {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        font-size: 24px;
+        z-index: 30;
+        color: white;
+      }
+
+      @media (min-width: 481px) and (max-width: 768px) {
+        #box2 {
+          top: 1vh;
+          left: 32vw;
+          width: 63vw;
+          height: 20vh;
+        }
+
+        #box3 {
+          top: 22vh;
+          left: 62vw;
+          width: 33vw;
+          height: 20vh;
+        }
+
+        #box4 {
+          top: 22vh;
+          left: 32vw;
+          width: 29vw;
+          height: 20vh;
+        }
+
+        #box5 {
+          top: 100vh;
+          left: 49vw;
+          width: 46vw;
+          height: 31vh;
+        }
+
+        #box6 {
+          top: 43vh;
+          left: 32vw;
+          width: 63vw;
+          height: 56vh;
+        }
+
+        #box7 {
+          top: 1vh;
+          left: 1vw;
+          width: 30vw;
+          height: 50vh;
+        }
+
+        #box8 {
+          top: 100vh;
+          left: 1vw;
+          width: 46vw;
+          height: 31vh;
+        }
+
+        #box9 {
+          top: 52vh;
+          left: 1vw;
+          width: 30vw;
+          height: 47vh;
+        }
+
+        .box img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .box:hover {
+          transform: scale(1.05);
+        }
+
+        #overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          z-index: 1;
+          display: none;
+        }
+
+        .closeButton {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          font-size: 24px;
+          z-index: 30;
+          color: white;
+        }
+      }
+      @media (max-width: 480px) {
+        .box {
+          position: absolute;
+          background-color: #ddd;
+          border: 1px solid #000;
+        }
+
+        #box2 {
+          top: 293vh;
+          left: 1vw;
+          width: 94vw;
+          height: 20vh;
+        }
+
+        #box3 {
+          top: 1vh;
+          left: 1vw;
+          width: 94vw;
+          height: 30vh;
+        }
+
+        #box4 {
+          top: 252vh;
+          left: 1vw;
+          width: 94vw;
+          height: 40vh;
+        }
+
+        #box5 {
+          top: 220vh;
+          left: 1vw;
+          width: 94vw;
+          height: 31vh;
+        }
+
+        #box6 {
+          top: 131vh;
+          left: 1vw;
+          width: 94vw;
+          height: 56vh;
+        }
+
+        #box7 {
+          top: 32vh;
+          left: 1vw;
+          width: 94vw;
+          height: 50vh;
+        }
+
+        #box8 {
+          top: 188vh;
+          left: 1vw;
+          width: 94vw;
+          height: 31vh;
+        }
+
+        #box9 {
+          top: 83vh;
+          left: 1vw;
+          width: 94vw;
+          height: 47vh;
+        }
+
+        .box img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        .box:hover {
+          transform: scale(1.05);
+        }
+
+        #overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.6);
+          z-index: 1;
+          display: none;
+        }
+
+        .closeButton {
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          cursor: pointer;
+          font-size: 24px;
+          z-index: 30;
+          color: white;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="overlay"></div>
+    <div class="container">
+      <div class="box" id="box2">
+        <img src="head_02.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box3">
+        <img src="horse_03.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box4">
+        <img src="knight_04.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box5">
+        <img src="horse_05.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box6">
+        <img src="knight_06.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box7">
+        <img src="knight_07.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box8">
+        <img src="mnich_08.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+      <div class="box" id="box9">
+        <img src="kupiec_09.png" alt="Rycerz" />
+        <span class="closeButton" style="display: none">&times;</span>
+      </div>
+    </div>
+  </body>
+</html>
+<script>
+  var COmputerStyles = [
+    //domyślne
+    { id: "box2", top: "1vh", left: "32vw", width: "30vw", height: "20vh" },
+    { id: "box3", top: "1vh", left: "63vw", width: "36vw", height: "20vh" },
+    { id: "box4", top: "22vh", left: "32vw", width: "20vw", height: "20vh" },
+    { id: "box5", top: "22vh", left: "53vw", width: "46vw", height: "45vh" },
+    { id: "box6", top: "43vh", left: "32vw", width: "20vw", height: "56vh" },
+    { id: "box7", top: "1vh", left: "1vw", width: "30vw", height: "50vh" },
+    { id: "box8", top: "68vh", left: "53vw", width: "46vw", height: "31vh" },
+    { id: "box9", top: "52vh", left: "1vw", width: "30vw", height: "47vh" },
+  ];
+  var TabletStyles = [
+    // @media (min-width: 481px) and (max-width: 768px)
+
+    { id: "box2", top: "1vh", left: "32vw", width: "63vw", height: "20vh" },
+    { id: "box3", top: "22vh", left: "62vw", width: "33vw", height: "20vh" },
+    { id: "box4", top: "22vh", left: "32vw", width: "29vw", height: "20vh" },
+    { id: "box5", top: "100vh", left: "49vw", width: "46vw", height: "31vh" },
+    { id: "box6", top: "43vh", left: "32vw", width: "63vw", height: "56vh" },
+    { id: "box7", top: "1vh", left: "1vw", width: "30vw", height: "50vh" },
+    { id: "box8", top: "100vh", left: "1vw", width: "46vw", height: "31vh" },
+    { id: "box9", top: "52vh", left: "1vw", width: "30vw", height: "47vh" },
+  ];
+  var PhoneStyles = [
+    // (max-width: 480px)
+    { id: "box2", top: "293vh", left: "1vw", width: "94vw", height: "20vh" },
+    { id: "box3", top: "1vh", left: "1vw", width: "94vw", height: "30vh" },
+    { id: "box4", top: "252vh", left: "1vw", width: "94vw", height: "40vh" },
+    { id: "box5", top: "220vh", left: "1vw", width: "94vw", height: "31vh" },
+    { id: "box6", top: "131vh", left: "1vw", width: "94vw", height: "56vh" },
+    { id: "box7", top: "32vh", left: "1vw", width: "94vw", height: "50vh" },
+    { id: "box8", top: "188vh", left: "1vw", width: "94vw", height: "31vh" },
+    { id: "box9", top: "83vh", left: "1vw", width: "94vw", height: "47vh" },
+  ];
+
+  function getCurrentStyles() {
+    if (window.matchMedia("(max-width: 480px)").matches) {
+      return PhoneStyles;
+    } else if (
+      window.matchMedia("(min-width: 481px) and (max-width: 768px)").matches
+    ) {
+      return TabletStyles;
+    } else {
+      return COmputerStyles;
+    }
+  }
+
+  function updateBoxStyles() {
+    var boxes = document.querySelectorAll(".box");
+    var currentStyles = getCurrentStyles();
+
+    boxes.forEach(function (box) {
+      var style = currentStyles.find((s) => s.id === box.id);
+      box.style.top = style.top;
+      box.style.left = style.left;
+      box.style.width = style.width;
+      box.style.height = style.height;
+      box.style.transform = "none";
+    });
+  }
+
+  window.addEventListener("resize", updateBoxStyles);
+
+  function scrollToTop() {
+    setTimeout(function () {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+    }, 100); // Opóźnienie 100 ms
+  }
+
+  var boxes = document.querySelectorAll(".box");
+  var overlay = document.getElementById("overlay");
+
+  boxes.forEach(function (box) {
+    var closeButton = box.querySelector(".closeButton");
+
+    box.addEventListener("click", function () {
+        console.log("test");
+
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        var viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
+        // Ustawienie diva na środku aktualnie widocznej części okna przeglądarki
+        this.style.top = (scrollTop + (viewportHeight / 2)) + 'px';
+        this.style.left = "50%";
+        this.style.width = "60%";
+        this.style.height = "60%";
+        this.style.transform = "translate(-50%, -50%)";
+        this.style.zIndex = "10";
+
+        closeButton.style.display = "block";
+        overlay.style.display = "block";
+        overlay.style.zIndex = "1";
+    });
+
+    closeButton.addEventListener("click", function (e) {
+      e.stopPropagation();
+
+      updateBoxStyles();
+
+      closeButton.style.display = "none";
+      overlay.style.display = "none";
+      overlay.style.zIndex = "-1";
+    });
+  });
+
+  updateBoxStyles();
+</script>
