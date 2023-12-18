@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+
+    <div class="container-fluid">
+      <div class="row"  style="margin-top: 20px" >
+        <div class="col-md-12">
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+        </div>
+      </div>
+      <div class="row"  style="margin-top: 20px">
+        <div class="col-md-12">
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+        </div>
+      </div>
+      <div class="row"  style="margin-top: 20px">
+        <div class="col-md-12">
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px">
+          <button class="btn btn-primary my-button">Przycisk</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 20px">
+          <img alt="Bootstrap Image Preview" src="papuga.jpg" />
+        </div>
+      </div>
+      <div class="container-fluid">
+        <div class="row" style="margin-top: 40px">
+          <div class="col-md-6">
+            <input
+              type="file"
+              id="uploadImage"
+              accept="image/*"
+              style="display: none"
+            />
+            <button id="addImageBtn" class="btn btn-primary">
+              Dodaj zdjęcie
+            </button>
+            <button id="downloadImageBtn" class="btn btn-success">
+              Pobierz zdjęcie
+            </button>
+            <br />
+            <label>Contrast:</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="100"
+              class="slider"
+              id="contrastRange"
+            />
+            <br />
+            <label>Saturate:</label>
+            <input
+              type="range"
+              min="0"
+              max="200"
+              value="100"
+              class="slider"
+              id="saturateRange"
+            />
+            <br />
+            <label>Sepia:</label>
+            <input
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              class="slider"
+              id="sepiaRange"
+            />
+            <br />
+            <label>Blur:</label>
+            <input
+              type="range"
+              min="0"
+              max="10"
+              value="0"
+              class="slider"
+              id="blurRange"
+            />
+            <br />
+          </div>
+          <div class="col-md-6">
+            <img
+              alt="Bootstrap Image Preview"
+              src="papuga.jpg"
+              id="imageToFilter"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <style>
+      .row:nth-of-type(1) .col-md-12 img:nth-of-type(1) {
+        filter: blur(5px);
+      }
+
+      .row:nth-of-type(1) .col-md-12 img:nth-of-type(2) {
+        filter: grayscale(100%);
+      }
+
+      .row:nth-of-type(1) .col-md-12 img:nth-of-type(3) {
+        filter: sepia(60%);
+      }
+
+      .row:nth-of-type(1) .col-md-12 img:nth-of-type(4) {
+        filter: invert(75%);
+      }
+      .row:nth-of-type(1) .col-md-12 img:nth-of-type(4) {
+        filter: saturate(30%);
+      }
+
+
+      .row:nth-of-type(2) .col-md-12 img:nth-of-type(1) {
+        filter: drop-shadow(10px 10px 5px red)
+      }
+      .row:nth-of-type(2) .col-md-12 img:nth-of-type(2) {
+        filter: drop-shadow(10px 10px 5px rgba(0, 0, 0, 0.5));
+      }
+      .row:nth-of-type(2) .col-md-12 img:nth-of-type(3) {
+        filter: drop-shadow(10px 10px 5px red) 
+            drop-shadow(20px 20px 5px yellow) 
+            drop-shadow(-10px -10px 5px blue);
+      }
+
+
+      .row:nth-of-type(3) .col-md-12 img:nth-of-type(1) {
+        filter: hue-rotate(0deg);
+
+      }
+      .row:nth-of-type(3) .col-md-12 img:nth-of-type(2) {
+        filter: hue-rotate(120deg);
+      }
+      .row:nth-of-type(3) .col-md-12 img:nth-of-type(3) {
+        filter: hue-rotate(240deg);
+      }
+
+      .my-button {
+        transition: filter 0.3s ease-in-out;
+      }
+
+      .my-button:hover {
+        filter: sepia(100%) saturate(5%);
+      }
+
+      .my-button {
+        transition: filter 0.3s ease-in-out;
+      }
+
+      .my-button:hover {
+        filter: sepia(100%) saturate(5%);
+      }
+      .row:nth-of-type(5) .col-md-12 img:nth-of-type(1) {
+        filter: drop-shadow(-1px -2px rgb(26,222,248)) drop-shadow(2px 2px rgba(253,36,79,255)) drop-shadow(1px 1px rgba(173,17,253,255)) drop-shadow(2px 2px rgb(26,222,248));
+      }
+    </style>
+  </body>
+</html>
+
+<script>
+  document
+    .getElementById("downloadImageBtn")
+    .addEventListener("click", function () {
+      const image = document.getElementById("imageToFilter");
+      const canvas = document.createElement("canvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = image.naturalWidth;
+      canvas.height = image.naturalHeight;
+      ctx.filter = getComputedStyle(image).filter;
+      ctx.drawImage(image, 0, 0, canvas.width, canvas.height);
+      const link = document.createElement("a");
+      link.download = "filtered-image.png";
+      link.href = canvas.toDataURL();
+      link.click();
+    });
+
+  document.getElementById("addImageBtn").addEventListener("click", function () {
+    document.getElementById("uploadImage").click();
+  });
+
+  document
+    .getElementById("uploadImage")
+    .addEventListener("change", function (event) {
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        document.getElementById("imageToFilter").src = e.target.result;
+      };
+      reader.readAsDataURL(event.target.files[0]);
+    });
+  const image = document.getElementById("imageToFilter");
+
+  function updateFilters() {
+    const contrast = document.getElementById("contrastRange").value;
+    const saturate = document.getElementById("saturateRange").value;
+    const sepia = document.getElementById("sepiaRange").value;
+    const blur = document.getElementById("blurRange").value;
+
+    const filterValue = `contrast(${contrast}%) saturate(${saturate}%) sepia(${sepia}%) blur(${blur}px)`;
+
+    image.style.filter = filterValue;
+  }
+
+  document
+    .getElementById("contrastRange")
+    .addEventListener("input", updateFilters);
+  document
+    .getElementById("saturateRange")
+    .addEventListener("input", updateFilters);
+  document
+    .getElementById("sepiaRange")
+    .addEventListener("input", updateFilters);
+  document.getElementById("blurRange").addEventListener("input", updateFilters);
+</script>
