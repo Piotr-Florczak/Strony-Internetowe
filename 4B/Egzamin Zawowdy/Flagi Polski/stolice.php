@@ -30,7 +30,7 @@
 
             echo "<ul>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<li>" . '<a href="wyświetl.php">' . $row["panstwo"] . "</a>". "</li>";
+                echo "<li><a href='wyświetl.php?panstwo=" . urldecode( $row["panstwo"]) . "'>" . $row["panstwo"] . "</a></li>";
             }
             echo "</ul>";
             mysqli_close($conn);
