@@ -1,0 +1,46 @@
+html, body
+{
+    background-color: #F6E5DC;
+    font-family: Verdana;
+}
+header
+{
+    background-color: #2F180C;
+    text-align: center;
+    color: khaki;
+    height: 60px;
+}
+.left_panel
+{
+    width: 60%;
+    float: left;   
+}
+.right_panel
+{
+    font-size:  150%;
+    padding: 70px;
+}
+.bottom_panel
+{
+    background-color: #D0B6A8;
+    text-align: center;
+    padding: 30px;
+    clear: both;
+}
+footer
+{
+    background-color: #2F180C;
+    color: khaki;
+    height: 60px;
+}
+img
+{
+    height: 350px;
+}
+button
+{
+    margin: 10px;
+    padding: 5px;
+    background-color: #2F180C;
+    color: khaki;
+}

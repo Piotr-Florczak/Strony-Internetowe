@@ -39,7 +39,7 @@
                 </section>
                 <section class="left_bottom">
 
-                    <h3>Ryby drapieżne naszych wód</h3>
+                    <h3>Ryby drapieżne naszych wód</h3>,
                     <table>
                         <tr>
                             <th>L.P.</th>
