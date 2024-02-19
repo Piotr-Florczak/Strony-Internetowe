@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 
 <head>
     <meta charset="UTF-8">
@@ -30,7 +30,8 @@
 
             echo "<ul>";
             while ($row = mysqli_fetch_assoc($result)) {
-                echo "<li><a href='wyświetl.php?panstwo=" . urldecode( $row["panstwo"]) . "'>" . $row["panstwo"] . "</a></li>";
+                $url = $row["panstwo"];
+                echo "<li><a href='?panstwo=$url'>" . $row["panstwo"] . "</a></li>";
             }
             echo "</ul>";
             mysqli_close($conn);
