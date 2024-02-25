@@ -38,18 +38,33 @@
                         <hr>
                     ";
                 }
-
-
+                $conn->close();
             ?>
-            
-
             <h3>Dokumenty pracownika</h3>
             <a href="cv.txt">Pobierz</a>
             <h1>Liczba zatrudnionych pracowników</h1>
-            <!-- skrypt 2 -->
+            <?php
+                  $conn = new mysqli("localhost", "root" , "", "firma");
+                  $sql = "SELECT * FROM pracownicy";
+                  $result = mysqli_query($conn,$sql);
+                  $num = mysqli_num_rows($result);
+                  echo "<p>".$num."</p>";
+                  $conn->close();
+
+            ?>
         </section>
         <section class="right">
-            <!-- skrypt 3 -->
+            <?php
+                 $conn = new mysqli("localhost", "root" , "", "firma");
+                 $sql = "SELECT id, imie, nazwisko FROM pracownicy WHERE id = 2";
+                 $result = mysqli_query($conn,$sql);
+                 while ($row = mysqli_fetch_array($result))
+                 {  
+                    echo "<img src=".$row["id"].".jpg alt=pracownik>";
+                 }
+                 $conn->close();
+            ?>
+            
         </section>
         <footer>
             Autorem aplikacji jest: numer zdającego

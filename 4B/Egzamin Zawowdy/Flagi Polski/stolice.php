@@ -31,7 +31,7 @@
             echo "<ul>";
             while ($row = mysqli_fetch_assoc($result)) {
                 $url = $row["panstwo"];
-                echo "<li><a href='?panstwo=$url'>" . $row["panstwo"] . "</a></li>";
+                echo "<li><a href='stolice.php?panstwo=$url'>" . $row["panstwo"] . "</a></li>";
             }
             echo "</ul>";
             mysqli_close($conn);

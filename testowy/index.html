@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Test Endpoint</title>
+</head>
+<body>
+    <h2>Test Endpoint</h2>
+    <button id="testButton">Test</button>
+    <p id="testResult"></p>
+
+    <script>
+        document.getElementById('testButton').addEventListener('click', function() {
+            fetch('http://localhost:8080/api/v1/auth/test')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(text => {
+                    document.getElementById('testResult').textContent = text;
+                })
+                .catch(error => {
+                    document.getElementById('testResult').textContent = 'Error: ' + error.message;
+                });
+        });
+    </script>
+</body>
+</html>
