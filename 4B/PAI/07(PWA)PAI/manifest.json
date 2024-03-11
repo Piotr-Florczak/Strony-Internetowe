@@ -1,0 +1,66 @@
+{
+  "short_name": "pwa@sci",
+  "name": "#sci-pwa-2024",
+  "description": "PWA @ PSI &amp; PAI",
+  "lang": "pl",
+  "id": "rwapwaampcspcorssciabcdefghij123",
+  "icons": [
+    {
+      "src": "/images/icons/icon192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/icon128.png",
+      "type": "image/png",
+      "sizes": "128x128",
+      "purpose": "any"
+    },
+    {
+      "src": "/images/icons/icon512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#FFFAF0",
+  "display_override": ["fullscreen", "standalone"],
+  "display": "fullscreen",
+  "scope": "/",
+  "theme_color": "#007EFB",
+  "screenshots": [
+    {
+      "src": "/images/screen/screenshot_(iPhone 12 Pro).png",
+      "type": "image/png",
+      "sizes": "1170x2532"
+    },
+    {
+      "src": "/images/screen/screenshot_(iPhone SE).png",	
+      "type": "image/png",
+      "sizes": "1334x750"
+    },
+    {
+      "src": "/images/screen/screenshot_(Samsung Galaxy S20 Ultra).png",
+      "type": "image/png",
+      "sizes": "1442x3202"
+    },
+    {
+      "src": "/images/screen/screenshot_4.png",
+      "type": "image/png",
+      "sizes": "800x600"
+    },
+    {
+      "src": "/images/screen/screenshot_5.jpg",
+      "type": "image/jpg",
+      "sizes": "1920x1080"
+    }
+  ],
+  "prefer_related_applications": false,
+  "dir": "ltr",
+  "categories": [
+    "education",
+    "security"
+  ]
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <div class="pulsing-dot"></div>  
+    </body>
+</html>
+
+<style>
+
+.pulsing-dot {
+  width: 100px; 
+  height: 100px; 
+  background-color: #ff0000;
+  border-radius: 50%; 
+  animation: pulse 2s infinite; 
+  position: absolute;
+  text-align: center;
+  left: 44%;
+  toP: 50%;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1); 
+    background-color: #ff0000; 
+  }
+  50% {
+    transform: scale(1.5); 
+    background-color: #ff6666; 
+  }
+  100% {
+    transform: scale(1);
+    background-color: #ff0000; 
+  }
+}
+
+
+</style>
