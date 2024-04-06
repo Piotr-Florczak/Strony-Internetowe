@@ -11,10 +11,9 @@ function MyNavbar() {
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
                     {/* Użyj bezpośrednio NavLink z react-router-dom jako 'as' */}
-                    <Nav.Link as={NavLink} to="/panel1" >1</Nav.Link>
-                    <Nav.Link as={NavLink} to="/panel2" >2</Nav.Link>
-                    <Nav.Link as={NavLink} to="/panel3" >3</Nav.Link>
-                    <Nav.Link as={NavLink} to="/panel4" >4</Nav.Link>
+                    <Nav.Link as={NavLink} to="/panel1" >Formularz zliczający znaki</Nav.Link>
+                    <Nav.Link as={NavLink} to="/panel2" >Funcja Kwadratowa</Nav.Link>
+                    <Nav.Link as={NavLink} to="/panel3" >Tabliczka mnożenia</Nav.Link>
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
