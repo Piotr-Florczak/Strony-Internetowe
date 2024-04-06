@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <button class="animated-button">
+            Przycisk
+            <span class="border-line"></span>
+            <span class="border-line"></span>
+          </button>
+          
+          
+    </body>
+</html>
+
+<style>
+    body{
+        background-color: gray;
+    }
+   .animated-button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #fff;
+  color: #000;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: color 0.4s, background-color 0.4s;
+  border-radius: 0px 8px;
+}
+
+.animated-button .border-line {
+  position: absolute;
+  background-color: #000;
+}
+
+/* Horizontal lines */
+.animated-button .border-line:first-child, .animated-button .border-line:last-child {
+  height: 3px;
+  left: 0;
+  right: 0;
+  transform: scaleX(0);
+  transition: transform 0.4s;
+}
+
+.animated-button .border-line:first-child {
+  top: 0;
+  transform-origin: left;
+}
+
+.animated-button .border-line:last-child {
+  bottom: 0;
+  transform-origin: right;
+}
+
+.animated-button::before, .animated-button::after {
+  content: '';
+  position: absolute;
+  background-color: #000;
+  width: 3px;
+  top: 0;
+  bottom: 0;
+  transform: scaleY(0);
+  transition: transform 0.4s;
+}
+
+.animated-button::before {
+  left: 0;
+  transform-origin: top;
+}
+
+.animated-button::after {
+  right: 0;
+  transform-origin: bottom;
+}
+
+.animated-button:hover .border-line:first-child, .animated-button:hover::before {
+  transform: scaleX(1);
+}
+
+.animated-button:hover .border-line:last-child, .animated-button:hover::after {
+  transform: scaleY(1);
+}
+
+.animated-button:hover {
+  background-color: #f0f0f0;
+}
+
+</style>
