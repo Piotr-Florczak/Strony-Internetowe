@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import MyNavbar from "./MyNavbar";
+import Panel1 from "./Panel1";
+import Panel2 from "./Panel2";
+// import Panel3 from "./Panel3";
+// import Panel4 from "./Panel4";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Router>
+                <MyNavbar />
+                <Routes>
+                    <Route path="/panel1" element={<Panel1 />} />
+                    <Route path="/panel2" element={<Panel2 />} />
+                    {/* <Route path="/panel3" element={<Panel3 />} />
+                    <Route path="/panel4" element={<Panel4 />} /> */}
+                </Routes>
+        </Router>
+    );
 }
 
 export default App;
