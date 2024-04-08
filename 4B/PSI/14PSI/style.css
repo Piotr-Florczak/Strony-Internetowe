@@ -1,0 +1,25 @@
+.container-fluid .row > div {
+    border: 1px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 15px;
+}
+.customNav button
+{
+    float: right;
+    border: none;
+    margin-right: 8px;
+    background: none;
+}
+
+
+/* CSS */
+.col-md-10 img {
+    width: 100%; /* Obrazek wypełnia szerokość kolumny */
+    height: auto; /* Wysokość jest automatycznie dostosowywana, aby zachować proporcje */
+    object-fit: cover; /* Zapewnia pokrycie dostępnej przestrzeni, zachowując proporcje */
+    max-height: 100vh; /* Opcjonalnie, ogranicza wysokość obrazka, jeśli jest za duży */
+}
+
+
+
+
