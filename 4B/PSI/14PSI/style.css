@@ -98,6 +98,7 @@ img {
     width: 200px;
     height: 150px;
     margin: 15px 30px;
+    text-align: center;
 }
 .custom2 .box2
 {
@@ -105,6 +106,38 @@ img {
     width: 200px;
     height: 150px;
     margin: 15px 30px;
+}
+.custom2 img
+{
+    width: 35%;
+    height: 35%;
+    margin-top: 10%;
+}
+.custom2 .box1 hr
+{
+    border: 1px solid #e1e3ed;
+    width: 40%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.custom2 .box1 p
+{
+    color: #2f4b9e;
+    font-weight: bold;
+    font-size: 17px;
+}
+.custom2 .box2 hr
+{
+    border: 1px solid #e1e7ee;
+    width: 40%;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+.custom2 .box2 p
+{
+    color: #f5f7e9;
+    font-weight: bold;
+    font-size: 17px;
 }
 .custom3 .box1
 {
