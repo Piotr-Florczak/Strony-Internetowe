@@ -1,0 +1,6 @@
+1. Połaczyć się z bazą danych
+2. Wczytać dane z tabeli kontynenty i ich wartości wykonać jako elementy rozwijanej listy
+3. Wczytać dane z tabeli panstwa i ich wartości wykonać jako elementy rozwijanej listy
+4. Wczytać dane z tabeli miasta i ich wartości wykonać jako elementy rozwijanej listy
+5. Powybraniu tych trzech parametrów i wciśnięciu przycisku "wybierz" wyświetli się zestawienie: kontynent, państwo, miasto, ludność, obszar po rozwijanymi listami
+mysqli_set_charset($con,'utf8')

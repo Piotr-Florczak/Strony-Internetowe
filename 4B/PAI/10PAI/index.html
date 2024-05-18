@@ -1,0 +1,64 @@
+<!DOCTYPE html> 
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Formularz z ciasteczkami</title>
+</head>
+<body>
+    <h1>Formularz danych użytkownika</h1>
+    <form>
+        <label for="imie">Imię:</label>
+        <input type="text" id="imie" name="imie" value="" required><br>
+        
+        <label for="nazwisko">Nazwisko:</label>
+        <input type="text" id="nazwisko" name="nazwisko" value="" required><br>
+        
+        <label for="posiada_komputer">Czy posiadasz komputer?</label>
+        <input type="checkbox" id="posiada_komputer" name="posiada_komputer"><br>
+        
+        <button type="submit" onclick="start(event)">Ustaw</button>
+    </form>
+    <script>
+       function setCookie(name, cvalue, exdays) {
+            const date = new Date();
+            date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + date.toUTCString();
+            document.cookie = name + "=" + cvalue + ";" + expires + ";path=/";
+       }
+       
+       function getCookie(name) {
+            let decodedCookie = decodeURIComponent(document.cookie);
+            let ca = decodedCookie.split(';');
+            for(let i = 0; i <ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(name + "=") == 0) {
+                    return c.substring(name.length + 1);
+                }
+            }
+            return "";
+        }
+        
+        function start(event) {
+            event.preventDefault();
+            const imie = document.getElementById("imie").value;
+            const nazwisko = document.getElementById("nazwisko").value;
+            const posiada_komputer = document.getElementById("posiada_komputer").checked;
+            setCookie("cimie", imie, 10);
+            setCookie("cnazwisko", nazwisko, 10);
+            setCookie("cposiada_komputer", posiada_komputer ? "true" : "false", 10);
+        }
+        
+        window.onload = () => {
+            let imie = getCookie("imiee");
+            if (imie) { document.getElementById("imie").value = imie; }
+            let nazwisko = getCookie("cnazwisko");
+            if (nazwisko) { document.getElementById("nazwisko").value = nazwisko; }
+            let posiada_komputer = getCookie("cposiada_komputer") === "true";
+            document.getElementById("posiada_komputer").checked = posiada_komputer;
+        }
+    </script>
+    
+</body>
+</html>
+
+

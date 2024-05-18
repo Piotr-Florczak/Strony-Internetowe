@@ -1,8 +1,23 @@
-.container-fluid .row > div {
+.center
+{
+    display: flex;
+    max-width: fit-content;
+    margin-inline: auto;
+}
+img
+{
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 100vh;
+}
+.container-fluid .row > div
+{
     border: 1px solid #ccc;
     background-color: rgba(0, 0, 0, 0.05);
     padding: 15px;
 }
+
 .customNav button
 {
     float: right;
@@ -10,15 +25,62 @@
     margin-right: 8px;
     background: none;
 }
-
-
-/* CSS */
-.col-md-10 img {
-    width: 100%; /* Obrazek wypełnia szerokość kolumny */
-    height: auto; /* Wysokość jest automatycznie dostosowywana, aby zachować proporcje */
-    object-fit: cover; /* Zapewnia pokrycie dostępnej przestrzeni, zachowując proporcje */
-    max-height: 100vh; /* Opcjonalnie, ogranicza wysokość obrazka, jeśli jest za duży */
+.custom1 .box
+{
+    border: 1px solid black;
+    width: 200px;
+    height: 130px;
+    margin: 40px;
+    text-align: center;
 }
+
+.custom1 .col-md-12
+{
+    text-align: center;
+}
+.img_man img
+{
+    width: 70%;
+    height: auto;
+    margin-left: 30px;
+    object-position: top;
+}
+.about-us
+{
+    position: absolute; /* Pozwala na pozycjonowanie względem kontenera */
+    top: 29%; /* Odległość od górnej krawędzi kontenera */
+    left: 59%;
+    width: 30%;
+    height: 60%;
+    background-color: blue;
+    padding-top: 3%;
+    padding-left: 3%;
+}
+p
+{
+    font-size: 18px;
+    color: white;
+    margin-right: 30px;
+}
+h1
+{
+    color: white;
+    padding-bottom: 4%;
+}
+.about-us button
+{
+    background-color: white;
+    color: blue;
+    margin-top: 20px;
+    border-radius: 20%;
+    border: none;
+}
+.about-us button:hover
+{
+    border: none;
+}
+
+
 
 
 
