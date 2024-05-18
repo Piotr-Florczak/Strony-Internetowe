@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pomocnik CSS</title>
+    <link rel="stylesheet" href="styl2.css" />
+  </head>
+  <body>
+    <header>
+      <section class="lewy">
+        <h1>Pomocnik CSS</h1>
+      </section>
+      <section class="prawy">
+        <ul>
+          <li><a href="kolory.html">kolory</a></li>
+          <li><a href="czcionki.html">Czcionki</a></li>
+          <li><a href="style.html">Style css</a></li>
+          <li>
+            <a href="https://www.w3schools.com/css/" target="_blank">Pomoc</a>
+          </li>
+        </ul>
+      </section>
+    </header>
+      <main>
+        <h2>Podaj składową H koloru w kodzie HSL</h2>
+        <p>
+          0 do 30 czerwienie, do 60 żółcie, do 150 zielenie, do 250 niebieskie,
+          do 360 fiolet i purpura
+        </p>
+        <img src="kolory.jpg" alt="Przestrzeń barw HSL" />
+        <br>
+        <input type="number" max="360" min="0" placeholder="0 - 360" id="input" value="" />
+        <button onclick="funkcja()">Generuj paletę</button>
+        <table>
+          <tr>
+            <td colspan="4" id="main">Kolor główny</td>
+          </tr>
+          <tr>
+            <td id="2">kolor 2</td>
+            <td id="3">kolor 3</td>
+            <td id="4">kolor 4</td>
+            <td id="5">kolor 5</td>
+          </tr>
+        </table>
+      </main>
+      <footer>
+        <p>Autor: pesel</p>
+      </footer>
+  </body>
+</html>
+<script>
+     function funkcja()
+    {
+         let value = document.getElementById("input").value;
+         let main = document.getElementById("main").style;
+         let c2 = document.getElementById("2").style;
+         let c3 = document.getElementById("3").style;
+         let c4 = document.getElementById("4").style;
+         let c5 = document.getElementById("5").style;
+         main.backgroundColor ='hsl('+value+', 100%, 50%)';
+         c2.backgroundColor ='hsl('+value+', 80%, 50%)';
+         c3.backgroundColor ='hsl('+value+', 60%, 50%)';
+         c4.backgroundColor ='hsl('+value+', 40%, 50%)';
+         c5.backgroundColor ='hsl('+value+', 20%, 50%)';
+    }
+</script>

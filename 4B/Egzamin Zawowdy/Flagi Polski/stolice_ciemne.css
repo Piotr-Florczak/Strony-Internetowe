@@ -1,71 +1,60 @@
-
-html, body
-{
-    background-color: olive;
+html, body {
+    background-color: #333;
+    color: #ff0; 
     height: 100%;
     margin: 0;
     padding: 0;
     justify-content: center;
     align-items: center;
 }
-section
-{
+section {
     justify-content: center;
     align-items: center;
-    width: 1200px; 
+    width: 1200px;
     margin: auto;
 }
-.baner
-{
-    
+.baner {
     width: 1200px;
     height: 100px;
-    background-color: white;
- 
+    background-color: #444; 
 }
-.tresc
-{
+.tresc {
     width: 800px;
     height: 600px;
-    background-color: turquoise;
+    background-color: #555;
     float: left;
-    
 }
-.menu
-{
+.menu {
     width: 400px;
     height: 600px;
-    background-color: royalblue;
-    color: yellow;
+    background-color: #666; 
+    color: yellow; 
     font: bold;
     float: left;
     overflow: auto;
 }
-.stopka
-{
+.stopka {
     width: 1200px;
     height: 100px;
-    background-color: maroon;
-    color: aliceblue;
+    background-color: #777; 
+    color: aliceblue; 
     clear: both;
     float: left;
-
 }
-button
-{
+button {
     float: right;
     border: none;
     width: 100px;
     height: 100px;
 }
-.ciemny
-{
+.ciemny, .jasny {
     border: none;
     width: 100px;
     height: 100px;
+}
+.ciemny {
     background-image: url("ciemny.png");
 }
-.jasny
-{
+.jasny {
     background-image: url("jasny.png");
 }

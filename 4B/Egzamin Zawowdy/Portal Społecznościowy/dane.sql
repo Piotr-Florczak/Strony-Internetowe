@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.1.1deb5ubuntu1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Czas generowania: 02 Paź 2019, 10:06
--- Wersja serwera: 10.1.36-MariaDB
--- Wersja PHP: 7.2.11
+-- Host: localhost:3306
+-- Czas generowania: 11 Sty 2023, 01:03
+-- Wersja serwera: 8.0.31-0ubuntu0.22.04.1
+-- Wersja PHP: 8.1.2-1ubuntu2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `dane`
+-- Baza danych: `egzamin`
 --
 
 -- --------------------------------------------------------
@@ -29,7 +28,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `hobby` (
-  `id` int(10) UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
   `nazwa` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -44,7 +43,7 @@ INSERT INTO `hobby` (`id`, `nazwa`) VALUES
 (4, 'gimnastyka'),
 (5, 'taniec'),
 (6, 'komputery'),
-(7, 'kryminały'),
+(7, 'krymina?y'),
 (8, 'nauka'),
 (9, 'majsterkowanie'),
 (10, 'samochody'),
@@ -62,11 +61,11 @@ INSERT INTO `hobby` (`id`, `nazwa`) VALUES
 --
 
 CREATE TABLE `osoby` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `Hobby_id` int(10) UNSIGNED NOT NULL,
+  `id` int UNSIGNED NOT NULL,
+  `Hobby_id` int UNSIGNED NOT NULL,
   `imie` varchar(20) DEFAULT NULL,
   `nazwisko` varchar(50) DEFAULT NULL,
-  `rok_urodzenia` year(4) DEFAULT NULL,
+  `rok_urodzenia` year DEFAULT NULL,
   `opis` text,
   `zdjecie` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -81,12 +80,12 @@ INSERT INTO `osoby` (`id`, `Hobby_id`, `imie`, `nazwisko`, `rok_urodzenia`, `opi
 (4, 5, 'Monika', 'Nowak', 1993, 'ello', 'osoba2.jpg'),
 (5, 11, 'Anna', 'Kowalska', 2002, 'Rzym jest cudny!', 'osoba3.jpg'),
 (6, 6, 'Grzegorz', 'Konieczny', 1983, 'Polecam nowy procesor XS756FFT', 'osoba6.jpg'),
-(7, 3, 'Monika', 'Kopacz', 2009, 'dzi? rano 5 km', 'osoba1.jpg'),
+(7, 3, 'Monika', 'Kopacz', 2009, 'dzis rano 5 km', 'osoba1.jpg'),
 (8, 3, 'Rysiek', 'Kowalski', 1993, 'Pobiegamy razem?', 'osoba7.jpg'),
 (9, 12, 'Ewa', 'Krzak', 2008, 'pozdrawiam wszystkich', 'osoba1.jpg'),
 (10, 3, 'Roksana', 'Rybnik', 1995, 'pozdrawiam', 'osoba3.jpg'),
 (11, 15, 'Grzegorz', 'Roh', 1983, 'Poszukuje znaczkow z 1967 roku', 'osoba6.jpg'),
-(12, 11, 'Monika', 'Kowalewska', 1976, 'Z checi? Ciebie poznam', 'osoba1.jpg'),
+(12, 11, 'Monika', 'Kowalewska', 1976, 'Z checia Ciebie poznam', 'osoba1.jpg'),
 (13, 16, 'Jan', 'Trzeciak', 2006, 'moje nowe dzielo', 'osoba5.jpg'),
 (14, 5, 'Joanna', 'Rysik', 1993, 'hej1', 'osoba2.jpg'),
 (15, 10, 'Anna', 'Kownacka', 2003, 'Szukam przyjaciol', 'osoba3.jpg'),
@@ -101,12 +100,12 @@ INSERT INTO `osoby` (`id`, `Hobby_id`, `imie`, `nazwisko`, `rok_urodzenia`, `opi
 (24, 3, 'Monika', 'Nowak', 1993, 'ello', 'osoba2.jpg'),
 (25, 4, 'Anna', 'Kowalska', 2002, 'Rzym jest cudny!', 'osoba3.jpg'),
 (26, 5, 'Grzegorz', 'Konieczny', 1983, 'Polecam nowy procesor XS756FFT', 'osoba6.jpg'),
-(27, 6, 'Monika', 'Kopacz', 2009, 'dzi? rano 5 km', 'osoba1.jpg'),
+(27, 6, 'Monika', 'Kopacz', 2009, 'dzis rano 5 km', 'osoba1.jpg'),
 (28, 7, 'Rysiek', 'Kowalski', 1993, 'Pobiegamy razem?', 'osoba7.jpg'),
 (29, 7, 'Ewa', 'Krzak', 2008, 'pozdrawiam wszystkich', 'osoba1.jpg'),
 (30, 8, 'Roksana', 'Rybnik', 1995, 'pozdrawiam', 'osoba3.jpg'),
 (31, 8, 'Grzegorz', 'Roh', 1983, 'Poszukuje znaczkow z 1967 roku', 'osoba6.jpg'),
-(32, 9, 'Monika', 'Kowalewska', 1976, 'Z checi? Ciebie poznam', 'osoba1.jpg'),
+(32, 9, 'Monika', 'Kowalewska', 1976, 'Z checia Ciebie poznam', 'osoba1.jpg'),
 (33, 12, 'Jan', 'Trzeciak', 2006, 'moje nowe dzielo', 'osoba5.jpg'),
 (34, 13, 'Joanna', 'Rysik', 1993, 'hej1', 'osoba2.jpg'),
 (35, 14, 'Anna', 'Kownacka', 2003, 'Szukam przyjaciol', 'osoba3.jpg'),
@@ -116,48 +115,6 @@ INSERT INTO `osoby` (`id`, `Hobby_id`, `imie`, `nazwisko`, `rok_urodzenia`, `opi
 (39, 6, 'Monika', 'Nowak', 1993, 'ello', 'osoba2.jpg'),
 (40, 6, 'Anna', 'Kowalska', 2002, 'Rzym jest cudny!', 'osoba3.jpg'),
 (41, 6, 'Grzegorz', 'Konieczny', 1983, 'Polecam nowy procesor XS756FFT', 'osoba6.jpg');
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `producenci`
---
-
-CREATE TABLE `producenci` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `nazwa` varchar(100) DEFAULT NULL,
-  `adres` varchar(100) DEFAULT NULL,
-  `miasto` varchar(20) DEFAULT NULL,
-  `rokWspolpraca` year(4) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `produkty`
---
-
-CREATE TABLE `produkty` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `Rodzaje_id` int(10) UNSIGNED NOT NULL,
-  `Producenci_id` int(10) UNSIGNED NOT NULL,
-  `nazwa` varchar(100) DEFAULT NULL,
-  `ilosc` double DEFAULT NULL,
-  `opis` text,
-  `cena` double DEFAULT NULL,
-  `zdjecie` varchar(100) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktura tabeli dla tabeli `rodzaje`
---
-
-CREATE TABLE `rodzaje` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `nazwa` varchar(50) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Indeksy dla zrzutów tabel
@@ -176,56 +133,20 @@ ALTER TABLE `osoby`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indeksy dla tabeli `producenci`
---
-ALTER TABLE `producenci`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeksy dla tabeli `produkty`
---
-ALTER TABLE `produkty`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indeksy dla tabeli `rodzaje`
---
-ALTER TABLE `rodzaje`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT dla zrzuconych tabel
 --
 
 --
 -- AUTO_INCREMENT dla tabeli `hobby`
 --
 ALTER TABLE `hobby`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT dla tabeli `osoby`
 --
 ALTER TABLE `osoby`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
-
---
--- AUTO_INCREMENT dla tabeli `producenci`
---
-ALTER TABLE `producenci`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT dla tabeli `produkty`
---
-ALTER TABLE `produkty`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT dla tabeli `rodzaje`
---
-ALTER TABLE `rodzaje`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

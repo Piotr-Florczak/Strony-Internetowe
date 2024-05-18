@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <title>Usługi fryzjerskie</title>
+        <link rel="stylesheet" href="styl3.css">
+    </head>
+    <body>
+        <div class="lewy1">
+            <a href="index.html"><h2>SALON FRYZJERSKI</h2></a>
+            <img src="obraz2.jpg" alt="Czesanie">
+        </div>
+        <div class="prawy1">
+            <h2>MENU</h2>
+        </div>
+        <div class="prawy2">
+            <ol>
+                <li><a href="fryzura.html">Strzyrzenie</a>
+                    <ul>
+                        <li>krótkie</li>
+                        <li>śrenie</li>
+                        <li>półdługie</li>
+                        <li>długie</li>   
+                    </ul>
+                </li>
+                <li>Czesanie</li>
+                <li>Koloryzacja</li>
+            </ol>
+        </div>
+        <div class="lewy2">
+            <h3>Dziś promocja na strzyżenie włosów</h3>
+                <input type="radio" id="1" name="1"> Krótkie
+                <br>
+                <input type="radio" id="2" name="1"> Średnie
+                <br>
+                <input type="radio" id="3" name="1"> Półdługie
+                <br>
+                <input type="radio" id="4" name="1"> Długie
+                <br>
+                <button onclick="podaj()">okdryj pormocje</button>
+                <p id="5"></p>
+        </div>
+        <div class="prawy3">
+            <img src="obraz1.jpg" alt="Fryzjer">
+        </div>
+        <footer>
+            <p>Autor: PESEL</p>
+        </footer>
+    </body>
+</html>
+<script>
+    function podaj()
+    {
+        if(document.getElementById("1").checked)
+        {
+            document.getElementById("5").innerHTML = "Cena strzyżenia: 25";
+        }
+        if(document.getElementById("2").checked)
+        {
+            document.getElementById("5").innerHTML = "Cena strzyżenia: 30";
+        }
+        if(document.getElementById("3").checked)
+        {
+            document.getElementById("5").innerHTML = "Cena strzyżenia: 40";
+        }
+        if(document.getElementById("4").checked)
+        {
+            document.getElementById("5").innerHTML = "Cena strzyżenia: 50";
+        }
+        
+    }
+</script>

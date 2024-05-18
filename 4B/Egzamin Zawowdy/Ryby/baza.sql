@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.4
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Czas generowania: 19 Lut 2018, 10:39
--- Wersja serwera: 10.1.28-MariaDB
--- Wersja PHP: 7.1.10
+-- Czas generowania: 29 Mar 2017, 10:12
+-- Wersja serwera: 10.1.19-MariaDB
+-- Wersja PHP: 5.6.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -19,89 +17,141 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Baza danych: `wedkowanie`
+-- Baza danych: `baza`
 --
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `lowisko`
+-- Struktura tabeli dla tabeli `dania`
 --
 
-CREATE TABLE `lowisko` (
+CREATE TABLE `dania` (
   `id` int(10) UNSIGNED NOT NULL,
-  `Ryby_id` int(10) UNSIGNED NOT NULL,
-  `akwen` text,
-  `wojewodztwo` text,
-  `rodzaj` int(10) UNSIGNED DEFAULT NULL
+  `typ` int(10) UNSIGNED DEFAULT NULL,
+  `nazwa` text,
+  `cena` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `lowisko`
+-- Zrzut danych tabeli `dania`
 --
 
-INSERT INTO `lowisko` (`id`, `Ryby_id`, `akwen`, `wojewodztwo`, `rodzaj`) VALUES
-(1, 2, 'Zalew Wegrowski', 'Mazowieckie', 4),
-(2, 3, 'Zbiornik Bukowka', 'Dolnoslaskie', 2),
-(3, 2, 'Jeziorko Bartbetowskie', 'Warminsko-Mazurskie', 2),
-(4, 1, 'Warta-Obrzycko', 'Wielkopolskie', 3),
-(5, 2, 'Stawy Milkow', 'Podkarpackie', 5),
-(6, 7, 'Przemsza k. Okradzinowa', 'Slaskie', 3);
+INSERT INTO `dania` (`id`, `typ`, `nazwa`, `cena`) VALUES
+(1, 1, 'Gazpacho', 20),
+(2, 1, 'Krem z warzyw', 25),
+(3, 1, 'Gulaszowa ostra', 30),
+(4, 2, 'Kaczka i owoc', 30),
+(5, 2, 'Kurczak pieczony', 40),
+(6, 2, 'wieprzowy przysmak', 35),
+(7, 2, 'Mintaj w panierce', 30),
+(8, 2, 'Alle kotlet', 30),
+(9, 3, 'Owoce morza', 20),
+(10, 3, 'Grzybki, warzywka, sos', 15),
+(11, 3, 'Orzechy i chipsy', 10),
+(12, 3, 'Tatar i jajo', 15),
+(13, 3, 'Bukiet warzyw', 10),
+(14, 4, 'Sok porzeczkowy', 3),
+(15, 4, 'Cola', 3),
+(16, 4, 'Woda', 2);
 
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `okres_ochronny`
+-- Struktura tabeli dla tabeli `konta`
 --
 
-CREATE TABLE `okres_ochronny` (
+CREATE TABLE `konta` (
   `id` int(10) UNSIGNED NOT NULL,
-  `Ryby_id` int(10) UNSIGNED NOT NULL,
-  `od_miesiaca` int(10) UNSIGNED DEFAULT NULL,
-  `do_miesiaca` int(10) UNSIGNED DEFAULT NULL,
-  `wymiar_ochronny` int(10) UNSIGNED DEFAULT NULL
+  `login` text,
+  `haslo` text
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Zrzut danych tabeli `okres_ochronny`
---
-
-INSERT INTO `okres_ochronny` (`id`, `Ryby_id`, `od_miesiaca`, `do_miesiaca`, `wymiar_ochronny`) VALUES
-(1, 1, 1, 4, 50),
-(2, 2, 0, 0, 30),
-(3, 3, 1, 5, 50),
-(4, 4, 0, 0, 15),
-(5, 5, 11, 6, 70),
-(6, 6, 0, 0, 0),
-(7, 7, 0, 0, 0),
-(8, 8, 0, 0, 25);
-
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `ryby`
+-- Struktura tabeli dla tabeli `lokale`
 --
 
-CREATE TABLE `ryby` (
+CREATE TABLE `lokale` (
   `id` int(10) UNSIGNED NOT NULL,
   `nazwa` text,
-  `wystepowanie` text,
-  `styl_zycia` int(11) DEFAULT NULL
+  `miasto` text,
+  `ulica` text,
+  `numer` int(10) UNSIGNED DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Zrzut danych tabeli `ryby`
+-- Zrzut danych tabeli `lokale`
 --
 
-INSERT INTO `ryby` (`id`, `nazwa`, `wystepowanie`, `styl_zycia`) VALUES
-(1, 'Szczupak', 'stawy, rzeki', 1),
-(2, 'Karp', 'stawy, jeziora', 2),
-(3, 'Sandacz', 'stawy, jeziora, rzeki', 1),
-(4, 'Okon', 'rzeki', 1),
-(5, 'Sum', 'jeziora, rzeki', 1),
-(6, 'Dorsz', 'morza, oceany', 1),
-(7, 'Leszcz', 'jeziora', 2),
-(8, 'Lin', 'jeziora', 2);
+INSERT INTO `lokale` (`id`, `nazwa`, `miasto`, `ulica`, `numer`) VALUES
+(1, 'Wszystkie Smaki', 'Zakopane', 'Orkana', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `ogloszenie`
+--
+
+CREATE TABLE `ogloszenie` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `uzytkownik_id` int(10) UNSIGNED NOT NULL,
+  `kategoria` int(10) UNSIGNED DEFAULT NULL,
+  `podkategoria` int(10) UNSIGNED DEFAULT NULL,
+  `tytul` text,
+  `tresc` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `ogloszenie`
+--
+
+INSERT INTO `ogloszenie` (`id`, `uzytkownik_id`, `kategoria`, `podkategoria`, `tytul`, `tresc`) VALUES
+(1, 1, 1, 12, 'Daniel Craig. Biografia', 'Biografia Daniela Craiga, niedrogo sprzedam'),
+(2, 1, 1, 13, 'Selekcja', 'Sprzedam: "Selekcja" J. Kellermana, niezniszczona'),
+(3, 2, 1, 13, 'Buick', 'Sprzedam horror Stephena Kinga w dobrym stanie'),
+(4, 2, 1, 14, 'Tytus, Romek i Atomek', 'Ks. IV do sprzedania, stan dobry'),
+(5, 2, 2, 0, 'Imagine Dragons', 'Sprzedam dwa CD Imagine Dragons');
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `pracownicy`
+--
+
+CREATE TABLE `pracownicy` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `imie` text,
+  `nazwisko` text,
+  `stanowisko` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Zrzut danych tabeli `pracownicy`
+--
+
+INSERT INTO `pracownicy` (`id`, `imie`, `nazwisko`, `stanowisko`) VALUES
+(1, 'Anna', 'Kowalska', 1),
+(2, 'Monika', 'Nowak', 2),
+(3, 'Ewelina', 'Nowakowska', 2),
+(4, 'Anna', 'Przybylska', 3),
+(5, 'Maria', 'Kowal', 3),
+(6, 'Ewa', 'Nowacka', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `rezerwacje`
+--
+
+CREATE TABLE `rezerwacje` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nr_stolika` int(10) UNSIGNED DEFAULT NULL,
+  `data_rez` date DEFAULT NULL,
+  `liczba_osob` int(10) UNSIGNED DEFAULT NULL,
+  `telefon` text
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -135,27 +185,6 @@ INSERT INTO `samochody` (`id`, `marka`, `model`, `rocznik`, `kolor`, `stan`) VAL
 -- --------------------------------------------------------
 
 --
--- Struktura tabeli dla tabeli `typy`
---
-
-CREATE TABLE `typy` (
-  `id` int(10) UNSIGNED NOT NULL,
-  `kategoria` text
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Zrzut danych tabeli `typy`
---
-
-INSERT INTO `typy` (`id`, `kategoria`) VALUES
-(1, 'Procesor'),
-(2, 'RAM'),
-(5, 'karta graficzna'),
-(6, 'HDD');
-
--- --------------------------------------------------------
-
---
 -- Struktura tabeli dla tabeli `uczniowie`
 --
 
@@ -174,6 +203,20 @@ INSERT INTO `uczniowie` (`imie`, `nazwisko`, `wiek`) VALUES
 ('Karolina', 'Witecka', 8),
 ('Karol', 'Rybacki', 9),
 ('Marina', 'Damiencka', 9);
+
+-- --------------------------------------------------------
+
+--
+-- Struktura tabeli dla tabeli `uzytkownicy`
+--
+
+CREATE TABLE `uzytkownicy` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `nick` text,
+  `zainteresowania` text,
+  `zawod` text,
+  `plec` char(1) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -269,21 +312,39 @@ INSERT INTO `zamowienia` (`id`, `Samochody_id`, `Klient`, `telefon`, `dataZam`) 
 --
 
 --
--- Indexes for table `lowisko`
+-- Indexes for table `dania`
 --
-ALTER TABLE `lowisko`
+ALTER TABLE `dania`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `okres_ochronny`
+-- Indexes for table `konta`
 --
-ALTER TABLE `okres_ochronny`
+ALTER TABLE `konta`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `ryby`
+-- Indexes for table `lokale`
 --
-ALTER TABLE `ryby`
+ALTER TABLE `lokale`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ogloszenie`
+--
+ALTER TABLE `ogloszenie`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `pracownicy`
+--
+ALTER TABLE `pracownicy`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `rezerwacje`
+--
+ALTER TABLE `rezerwacje`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -293,9 +354,9 @@ ALTER TABLE `samochody`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `typy`
+-- Indexes for table `uzytkownicy`
 --
-ALTER TABLE `typy`
+ALTER TABLE `uzytkownicy`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -321,54 +382,60 @@ ALTER TABLE `zamowienia`
 --
 
 --
--- AUTO_INCREMENT dla tabeli `lowisko`
+-- AUTO_INCREMENT dla tabeli `dania`
 --
-ALTER TABLE `lowisko`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+ALTER TABLE `dania`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
--- AUTO_INCREMENT dla tabeli `okres_ochronny`
+-- AUTO_INCREMENT dla tabeli `konta`
 --
-ALTER TABLE `okres_ochronny`
+ALTER TABLE `konta`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT dla tabeli `lokale`
+--
+ALTER TABLE `lokale`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT dla tabeli `ogloszenie`
+--
+ALTER TABLE `ogloszenie`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+--
+-- AUTO_INCREMENT dla tabeli `pracownicy`
+--
+ALTER TABLE `pracownicy`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT dla tabeli `ryby`
+-- AUTO_INCREMENT dla tabeli `rezerwacje`
 --
-ALTER TABLE `ryby`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+ALTER TABLE `rezerwacje`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT dla tabeli `samochody`
 --
 ALTER TABLE `samochody`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
 --
--- AUTO_INCREMENT dla tabeli `typy`
+-- AUTO_INCREMENT dla tabeli `uzytkownicy`
 --
-ALTER TABLE `typy`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
+ALTER TABLE `uzytkownicy`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT dla tabeli `uzytkownik`
 --
 ALTER TABLE `uzytkownik`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
 --
 -- AUTO_INCREMENT dla tabeli `wyniki`
 --
 ALTER TABLE `wyniki`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
-
 --
 -- AUTO_INCREMENT dla tabeli `zamowienia`
 --
 ALTER TABLE `zamowienia`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

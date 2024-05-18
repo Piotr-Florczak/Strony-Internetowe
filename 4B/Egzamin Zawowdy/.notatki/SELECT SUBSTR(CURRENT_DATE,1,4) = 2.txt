@@ -1,0 +1,6 @@
+SELECT SUBSTR(CURRENT_DATE,1,4) + 1  => 2025
+in(str,str,str) => rekordzy tylko dla tych danych(str)
+<video src="video.mp4" controls loop></video>
+background-image: linear-gradient(#97b498,#c8e6c9);
+zawsze wpisuj umieszczaj zmienne php w apostrofach kiedy umiszczas w kwerendach ! 
+

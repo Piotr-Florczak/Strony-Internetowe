@@ -1,60 +1,47 @@
-html,body
+body
 {
-    font-family: Helvetica;
+    background-color: #F6E5DC;
+    font-family: Verdana;
 }
-header , footer
+header
 {
-    background-color: #00838F;
-    color: white;
-    padding: 5px;
-    font-size: 130%;
+    background-color: #2F180C;
     text-align: center;
-    
+    color: khaki;
+    height: 60px;    
 }
-.left_top , .left_bottom
+.lewy
 {
-    background-color: #EFEFEF;
-    width: 55%;
+    width: 60%;
     float: left;
 }
-.left_top
+.prawy
 {
-    height: 150px;
+    font-size: 150%;
+    padding: 70px;
+    float: left;
 }
-.left_bottom
+main
 {
-    height: 300px;
-}
-aside
-{
-    background-color: #4FB3BF;
+    background-color: #D0B6A8;
     text-align: center;
-    height: 450px;
-}
-img
-{
-    box-shadow: 10px 10px 7px dimgray;
-    margin: 20px;
-}
-th , td 
-{
-   border: 1px solid  #4FB3BF;
-}
-table
-{
-    border-collapse: collapse;
-    margin: auto;
-    width: 80%;
-}
-td
-{
-    padding: 4px;
-}
-tr :hover
-{
-    background-color: #4FB3BF;
+    padding: 30px;
+    clear: both;
 }
 footer
 {
-    clear: both;
+    background-color: #2F180C;
+    color: khaki;
+    height: 60px;
+}
+img
+{
+    height: 350px;
+}
+button
+{
+    margin: 10px;
+    padding: 5px;
+    background-color: #2F180C;
+    color: khaki;
 }
