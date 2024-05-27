@@ -18,7 +18,7 @@
         
         <button type="submit" onclick="start(event)">Ustaw</button>
     </form>
-    <script>
+    <script> 
        function setCookie(name, cvalue, exdays) {
             const date = new Date();
             date.setTime(date.getTime() + (exdays * 24 * 60 * 60 * 1000));
@@ -43,7 +43,7 @@
             const imie = document.getElementById("imie").value;
             const nazwisko = document.getElementById("nazwisko").value;
             const posiada_komputer = document.getElementById("posiada_komputer").checked;
-            setCookie("cimie", imie, 10);
+            setCookie("imiee", imie, 10);
             setCookie("cnazwisko", nazwisko, 10);
             setCookie("cposiada_komputer", posiada_komputer ? "true" : "false", 10);
         }
